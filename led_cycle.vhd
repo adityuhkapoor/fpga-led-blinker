@@ -21,8 +21,8 @@ architecture Behavioral of led_blinker is
 signal count: unsigned(26 downto 0) := (others => '0');
 signal led_reg : std_logic_vector(15 downto 0) := (others => '0');
 
-type thresh_arr_t is array(0 to 15) of unsigned(26 downto 0);
-constant THRESHOLDS: thresh_arr_t := (
+type nested_unsigned_array is array(0 to 15) of unsigned(26 downto 0);
+constant THRESHOLDS: nested_unsigned_array := (
     0 => to_unsigned(0, 27),
     1 => to_unsigned(6250000, 27),
     2 => to_unsigned(12500000, 27),
